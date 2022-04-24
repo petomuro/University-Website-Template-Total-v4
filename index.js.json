@@ -16,7 +16,7 @@
 			"thread": "",
 			"mode": "debug",
 			"overload": 0,
-			"date": "2022-04-24T16:48:21.721Z",
+			"date": "2022-04-24T16:51:21.732Z",
 			"textdb": {
 				"size": 0.005,
 				"pendingwrite": 0,
@@ -26,7 +26,7 @@
 				"reading": 0,
 				"writing": 0
 			},
-			"memory": 6.81,
+			"memory": 6.84,
 			"rm": 0,
 			"fm": 0,
 			"wm": 0,
@@ -47,7 +47,7 @@
 			"errors": 0,
 			"timeouts": 0,
 			"online": 0,
-			"uptime": 123,
+			"uptime": 126,
 			"download": 0,
 			"upload": 0.016
 		}
