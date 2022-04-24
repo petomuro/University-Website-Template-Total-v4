@@ -1,18 +1,8 @@
-<style>
-  .m {
-    margin-bottom: 20px;
-  }
-  .bg {
-    padding: 10px;
-    background-color: #f0f0f0;
-  }
-</style>
-
 <div data---="mobilecarousel__null__selector:.col-sm-3">
   <div class="row">
     @{foreach mod in model}
     <div class="col-sm-3 m">
-      <div class="bg">
+      <div class="bg-mobile">
         <h2>@{mod['title']}</h2>
         <p>@{mod['description']}</p>
       </div>
