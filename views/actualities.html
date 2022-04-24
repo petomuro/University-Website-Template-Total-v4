@@ -1,0 +1,18 @@
+<style>
+  .bg {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 15px;
+  }
+</style>
+
+<div data---="carousel2__null__count:3;margin:20" class="invisible">
+  @{foreach mod in model}
+  <figure>
+    <div class="bg">
+      <h2>@{mod['title']}</h2>
+      <p>@{mod['description']}</p>
+    </div>
+  </figure>
+  @{end}
+</div>

@@ -1,0 +1,11 @@
+@{title('Home')}
+
+<div style="padding: 40px 15px; text-align: center">
+  <div>Section 1</div>
+  <div>Section 2</div>
+
+  @{if true} @{view('actualities', model)} @{else} @{view('actualities-mobile',
+  model)} @{fi}
+
+  <div>Section 4</div>
+</div>
