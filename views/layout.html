@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    @{import('meta', 'default.css')}
+    @{import('meta')}
 
     <link rel="stylesheet" href="//cdn.componentator.com/spa.min@19.css" />
 
@@ -26,6 +26,8 @@
       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
       crossorigin="anonymous"
     />
+
+    @{import('default.css', 'footer.css')}
 
     <script
       src="https://cdn.componentator.com/livereload.js"

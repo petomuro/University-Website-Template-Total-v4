@@ -14,7 +14,7 @@
 </div>
 
 <div class="container">
-  <!-- TODO: If device is tablet or pc first option else second option -->
+  <!-- TODO: If window width is tablet size or pc size first option else second option -->
 
   @{view('about', model[0])} @{view('social-icons')} @{if mobile}
   @{view('actualities-mobile', model[1])} @{else}
