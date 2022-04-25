@@ -3,6 +3,8 @@ exports.install = function () {
 };
 
 async function view_index() {
-  var actualities = await NOSQL("actualities").find().promise();
-  this.view("index", actualities);
+  var about = await NOSQL('about').find().promise();
+  var actualities = await NOSQL('actualities').find().promise();
+
+  this.view('index', [about, actualities]);
 }

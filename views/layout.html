@@ -2,15 +2,14 @@
 
 <html lang="en">
   <head>
+    @{meta}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>@{title}</title>
+    @{import('meta', 'default.css')}
 
     <link rel="stylesheet" href="//cdn.componentator.com/spa.min@19.css" />
-
-    <link rel="stylesheet" href="/public/css/default.css" />
 
     <!-- Latest compiled and minified CSS -->
     <link
@@ -27,21 +26,12 @@
       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
       crossorigin="anonymous"
     />
-  </head>
-
-  <body>
-    @{view('header')}
-
-    <div class="container">@{body}</div>
-
-    @{view('footer')}
-
-    <div data---="backtotop"></div>
 
     <script
       src="https://cdn.componentator.com/livereload.js"
-      data-url="ws://127.0.0.1:35729"
+      data-url="ws://127.0.0.1:35730"
     ></script>
+
     <script src="//cdn.componentator.com/spa.min@19.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
@@ -50,5 +40,11 @@
       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
       crossorigin="anonymous"
     ></script>
+  </head>
+
+  <body>
+    @{view('header')} @{body} @{view('footer')}
+
+    <div data---="backtotop"></div>
   </body>
 </html>

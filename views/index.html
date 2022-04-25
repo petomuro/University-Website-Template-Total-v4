@@ -1,11 +1,22 @@
-@{title('Home')}
+@{meta('Domov')}
 
-<div class="main-content">
-  <div>Section 1</div>
-  <div>Section 2</div>
+<div class="carousel">
+  <div data---="carousel2__null__count:1;margin:0;animate:0;" class="invisible">
+    <figure>
+      <!-- TODO: Update src to correct url/file -->
+      <img
+        src="https://im.ucm.sk/templates/institut_manazmentu/images/DomovDesktopSlide0.jpg"
+        class="img-responsive center-block"
+        alt="Carousel image"
+      />
+    </figure>
+  </div>
+</div>
 
-  @{if true} @{view('actualities', model)} @{else} @{view('actualities-mobile',
-  model)} @{fi}
+<div class="container">
+  <!-- TODO: If device is tablet or pc first option else second option -->
 
-  <div>Section 4</div>
+  @{view('about', model[0])} @{view('social-icons')} @{if mobile}
+  @{view('actualities-mobile', model[1])} @{else}
+  @{view('actualities',model[1])} @{fi} @{view('partners')}
 </div>
