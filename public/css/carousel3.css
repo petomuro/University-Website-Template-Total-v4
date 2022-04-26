@@ -1,0 +1,19 @@
+.ui-carousel3 {
+  overflow: hidden;
+}
+
+.ui-carousel3 .ui-carousel3-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ui-carousel3 .ui-carousel3-body {
+  padding-bottom: 30px;
+}
+
+.ui-carousel3 .ui-carousel3-body > figure {
+  cursor: grab;
+  float: left;
+}

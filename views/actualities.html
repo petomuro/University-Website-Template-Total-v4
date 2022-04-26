@@ -1,15 +1,12 @@
 <!-- TODO: If device is tablet show only 2 items -->
 <div class="actualities">
-  <div
-    data---="carousel2__null__selector:figure;count:3;margin:0;"
-    class="invisible"
-  >
+  <div data---="carousel3__null__;margin:0;" class="invisible">
     @{foreach mod in model}
     <figure>
       <div class="bg-actualities">
         <!-- TODO: Add image -->
         <!-- <img src="..." alt="..." /> -->
-        <h2>@{mod['title']}</h2>
+        <h3>@{mod['title']}</h3>
         <p>@{mod['description']}</p>
       </div>
     </figure>
