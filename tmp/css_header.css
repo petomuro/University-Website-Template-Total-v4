@@ -1,1 +1,1 @@
-@media (min-width:768px){.navbar-nav{float:none;margin:0 auto;display:table;table-layout:fixed}.dropdown:hover .dropdown-menu{display:block}}
+@media (min-width:768px){.header .dropdown:hover .dropdown-menu{display:block}}.header .navbar{margin-bottom:0}.header .navbar h1{color:#b1539f;font-size:1.71em}

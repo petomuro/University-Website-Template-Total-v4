@@ -1,13 +1,18 @@
 <!-- TODO: If device is tablet show only 2 items -->
 <div class="actualities">
-  <div data---="carousel3__null__;margin:0;" class="invisible">
-    @{foreach mod in model}
+  <div data---="carousel3__null__margin:0;" class="invisible">
+    @{foreach mod in model.reverse()}
     <figure>
       <div class="bg-actualities">
-        <!-- TODO: Add image -->
-        <!-- <img src="..." alt="..." /> -->
+        <!-- TODO: Update src to correct url/file -->
+        <img
+          src="https://im.ucm.sk/images/Institut_manazmentu/default.jpg"
+          class="img-responsive center-block"
+          alt="Actualities image"
+        />
         <h3>@{mod['title']}</h3>
         <p>@{mod['description']}</p>
+        <p class="read-more"><a href="#">Čítať viac</a></p>
       </div>
     </figure>
     @{end}

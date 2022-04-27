@@ -1,13 +1,17 @@
 <div class="about">
-  <div class="jumbotron">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        .col-xs-12 .col-sm-6 .col-md-8
-      </div>
-      <div class="col-xs-12 col-md-12 col-md-12 col-lg-6">
-        <h2>@{model[0]['title']}</h2>
-        <p>@{model[0]['text']}</p>
-      </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 vcenter">
+      <!-- TODO: Update src to correct url/file -->
+      <img
+        src="https://im.ucm.sk/images/Institut_manazmentu/sec11.png"
+        class="img-responsive center-block"
+        alt="About faculty image"
+      />
+    </div>
+
+    <div class="col-xs-12 col-md-12 col-md-6 col-lg-6 vcenter">
+      <h2>@{model[0]['title']}</h2>
+      <p>@{model[0]['text']}</p>
     </div>
   </div>
 </div>

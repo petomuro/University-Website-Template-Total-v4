@@ -1,5 +1,8 @@
 .carousel {
-  // margin-top: -20px; // TODO: Use or not use?
+}
+
+.carousel img {
+  width: 100%;
 }
 
 .about {
@@ -8,7 +11,11 @@
   padding: 10px;
 }
 
-.social-icons {
+.about h2 {
+  font-size: 1.42em;
+}
+
+.section2 {
   background-color: antiquewhite;
   padding: 10px;
 }
@@ -18,12 +25,22 @@
   padding: 10px;
 }
 
-.bg-actualities {
+.actualities .bg-actualities {
   background-color: #f0f0f0;
   border-radius: 15px;
   height: 500px;
   margin: 10px;
   padding: 15px;
+  position: relative;
+}
+
+.actualities .bg-actualities h3 {
+  font-size: 1.28em;
+}
+
+.actualities .bg-actualities .read-more {
+  bottom: 0;
+  position: absolute;
 }
 
 .partners {

@@ -1,14 +1,3 @@
-.full {
-  width: 100%;
-}
-
-.gap {
-  clear: both;
-  display: block;
-  height: 30px;
-  width: 100%;
-}
-
 .footer {
   background: #edeff1;
   border-bottom: 1px solid #cccccc;
@@ -23,14 +12,10 @@
   margin: 0;
 }
 
-.footer img {
-  max-width: 100%;
-}
-
 .footer h3 {
   border-bottom: 1px solid #bac1c8;
   color: #54697e;
-  font-size: 18px;
+  font-size: 1.28em;
   font-weight: 600;
   line-height: 27px;
   padding: 40px 0 10px;
@@ -39,7 +24,7 @@
 
 .footer ul {
   color: #7f8c8d;
-  font-size: 13px;
+  font-size: 0.92em;
   list-style-type: none;
   margin-left: 0;
   margin-top: 15px;
@@ -55,95 +40,6 @@
   color: #78828d;
 }
 
-.supportLi h4 {
-  font-size: 20px;
-  font-weight: lighter;
-  line-height: normal;
-  margin-bottom: 0 !important;
-  padding-bottom: 0;
-}
-
-.newsletter-box input#appendedInputButton {
-  background: #ffffff;
-  clear: both;
-  display: inline-block;
-  float: left;
-  height: 30px;
-  width: 100%;
-}
-
-.newsletter-box .btn {
-  border: medium none;
-  border-radius: 3px;
-  color: #fff;
-  display: inline-block;
-  height: 40px;
-  padding: 0;
-  width: 100%;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-
-.newsletter-box {
-  overflow: hidden;
-}
-
-.bg-gray {
-  background-image: -moz-linear-gradient(
-    center bottom,
-    #bbbbbb 0%,
-    #f0f0f0 100%
-  );
-  box-shadow: 0 1px 0 #b4b3b3;
-}
-
-.social li {
-  background: none repeat scroll 0 0 #b5b5b5;
-  border: 2px solid #b5b5b5;
-  border-radius: 50%;
-  float: left;
-  height: 36px;
-  line-height: 36px;
-  margin: 0 8px 8px 0;
-  padding: 0;
-  text-align: center;
-  transition: all 0.5s ease 0s;
-  width: 36px;
-  -moz-border-radius: 50%;
-  -moz-transition: all 0.5s ease 0s;
-  -ms-border-radius: 50%;
-  -ms-transition: all 0.5s ease 0s;
-  -o-border-radius: 50%;
-  -o-transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-  -webkit-border-radius: 50%;
-}
-
-.social li:hover {
-  transform: scale(1.15) rotate(360deg);
-  -moz-transform: scale(1.1) rotate(360deg);
-  -ms-transform: scale(1.1) rotate(360deg);
-  -o-transform: scale(1.1) rotate(360deg);
-  -webkit-transform: scale(1.1) rotate(360deg);
-}
-
-.social li a {
-  color: #edeff1;
-}
-
-.social li:hover {
-  background: #2c3e50;
-  border: 2px solid #2c3e50;
-}
-
-.social li a i {
-  color: #edeff1 !important;
-  font-size: 16px;
-  margin: 0 0 0 5px;
-}
-
 .footer-bottom {
   background: #e3e3e3;
   border-top: 1px solid #dddddd;
@@ -154,6 +50,6 @@
   padding-top: 6px;
 }
 
-.payments {
+.footer-bottom .social {
   font-size: 1.5em;
 }
