@@ -1,6 +1,6 @@
 <!-- TODO: If device is tablet show only 2 items -->
 <div class="actualities">
-  <div data---="carousel3__null__margin:0;" class="invisible">
+  <div data---="carousel3__null__margin:0;delay:5000;" class="invisible">
     @{foreach mod in model.reverse()}
     <figure>
       <div class="bg-actualities">
@@ -12,7 +12,7 @@
         />
         <h3>@{mod['title']}</h3>
         <p>@{mod['description']}</p>
-        <p class="read-more"><a href="#">Čítať viac</a></p>
+        <a href="#">Čítať viac</a>
       </div>
     </figure>
     @{end}

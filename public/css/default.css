@@ -1,6 +1,3 @@
-.carousel {
-}
-
 .carousel img {
   width: 100%;
 }
@@ -15,22 +12,15 @@
   font-size: 1.42em;
 }
 
-.section2 {
-  background-color: antiquewhite;
-  padding: 10px;
-}
-
 .actualities {
-  background-color: darkgrey;
-  padding: 10px;
+  background-color: white;
 }
 
 .actualities .bg-actualities {
   background-color: #f0f0f0;
-  border-radius: 15px;
   height: 500px;
   margin: 10px;
-  padding: 15px;
+  padding: 20px;
   position: relative;
 }
 
@@ -38,8 +28,9 @@
   font-size: 1.28em;
 }
 
-.actualities .bg-actualities .read-more {
-  bottom: 0;
+.actualities .bg-actualities a {
+  bottom: 15px;
+  color: #b1539f;
   position: absolute;
 }
 
