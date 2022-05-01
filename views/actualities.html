@@ -1,20 +1,22 @@
 <!-- TODO: If device is tablet show only 2 items -->
 <div class="actualities">
-  <div data---="carousel3__null__margin:0;delay:5000;" class="invisible">
-    @{foreach mod in model.reverse()}
-    <figure>
-      <div class="bg-actualities">
-        <!-- TODO: Update src to correct url/file -->
-        <img
-          src="https://im.ucm.sk/images/Institut_manazmentu/default.jpg"
-          class="img-responsive center-block"
-          alt="Actualities image"
-        />
-        <h3>@{mod['title']}</h3>
-        <p>@{mod['description']}</p>
-        <a href="#">Čítať viac</a>
-      </div>
-    </figure>
-    @{end}
+  <div class="container">
+    <div data---="carousel3__null__margin:0;delay:5000;" class="invisible">
+      @{foreach mod in model.reverse()}
+      <figure>
+        <div class="bg-actualities">
+          <!-- TODO: Update src to correct url/file -->
+          <img
+            src="https://im.ucm.sk/images/Institut_manazmentu/default.jpg"
+            class="img-responsive center-block"
+            alt="Actualities image"
+          />
+          <h3>@{mod['title']}</h3>
+          <p>@{mod['description']}</p>
+          <a href="#">Čítať viac</a>
+        </div>
+      </figure>
+      @{end}
+    </div>
   </div>
 </div>

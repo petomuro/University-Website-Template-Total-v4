@@ -32,8 +32,8 @@
   .header .navbar-nav > li > a {
     line-height: 27px;
     /* (80px - line-height of 27px) / 2 = 26.5px */
-    padding-top: 26.5px;
     padding-bottom: 26.5px;
+    padding-top: 26.5px;
   }
 
   .header .navbar-toggle {
