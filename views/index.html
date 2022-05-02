@@ -8,9 +8,11 @@
         src="https://scontent.fbts8-1.fna.fbcdn.net/v/t39.30808-6/272297557_494444662098082_4275714709528020545_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=e3f864&_nc_ohc=r5HQTBDSB4AAX_NWHX5&_nc_oc=AQm9V--mSxgBESjkQxx9a5gQRVGVOmEahp8gHqaWAN76BhFyTIY_dnjkHYzZn7Lt0Bk&_nc_ht=scontent.fbts8-1.fna&oh=00_AT_0Sd2HCH0TlXvzs1mG5TguwYZmh8Hd551cUJDSVbt_1w&oe=6274C589"
         class="img-responsive center-block"
         alt="Carousel image"
+        loading="lazy"
       />
     </figure>
   </div>
 </div>
 
-@{view('about', model[0])} @{view('actualities',model[1])} @{view('partners')}
+@{view('why-join')} @{view('about', model[0])} @{view('trailer', model[1])}
+@{view('actualities', model[2])} @{view('partners')}

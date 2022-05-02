@@ -1,6 +1,31 @@
 @media (max-width: 991px) {
-  .about {
+  .why-join {
+    // padding: 10px; // TODO: Use or not use?
+  }
+
+  .why-join .container {
+    position: relative;
     padding: 10px;
+  }
+
+  .why-join .container::before {
+    background-attachment: fixed;
+    background-image: url(../background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .about {
+    // padding: 10px; // TODO: Use or not use?
   }
 
   .about .container {
@@ -8,26 +33,88 @@
     padding: 10px;
   }
 
-  .actualities {
+  .trailer {
+    // padding: 10px;
+  }
+
+  .trailer .container {
+    position: relative;
     padding: 10px;
   }
 
+  .trailer .container::before {
+    background-attachment: fixed;
+    background-image: url(../background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .actualities {
+    // padding: 10px; // TODO: Use or not use?
+  }
+
   .actualities .container {
-    background-color: #e3e3e3;
+    background-color: #b1539f;
     padding: 10px;
   }
 
   .partners {
-    padding: 10px;
+    // padding: 10px; // TODO: Use or not use?
   }
 
   .partners .container {
-    background-color: white;
+    position: relative;
     padding: 10px;
+  }
+
+  .partners .container::before {
+    background-attachment: fixed;
+    background-image: url(../background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 
 @media (min-width: 992px) {
+  .why-join {
+    position: relative;
+    padding: 40px;
+  }
+
+  .why-join::before {
+    background-attachment: fixed;
+    background-image: url(../background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   .about {
     background: linear-gradient(
       to right,
@@ -39,20 +126,73 @@
     padding: 40px;
   }
 
+  .about img {
+    box-shadow: 15px 15px #b1539f;
+  }
+
+  .trailer {
+    padding: 40px;
+    position: relative;
+  }
+
+  .trailer::before {
+    background-attachment: fixed;
+    background-image: url(../background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .trailer img {
+    box-shadow: -10px 10px #e3e3e3; // TODO: Use or not use?
+  }
+
+  .trailer .fb-video {
+    box-shadow: -10px 10px lightgray; // TODO: Use or not use?
+  }
+
   .actualities {
     background: linear-gradient(
       to right,
-      #e3e3e3 0%,
-      #e3e3e3 75%,
+      #b1539f 0%,
+      #b1539f 75%,
       white 75%,
       white 100%
     );
     padding: 40px;
   }
 
+  .actualities .bg-actualities {
+    box-shadow: -10px 10px lightgray;
+  }
+
   .partners {
-    background-color: white;
+    position: relative;
     padding: 40px;
+  }
+
+  .partners::before {
+    background-attachment: fixed;
+    background-image: url(../background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 
@@ -60,8 +200,25 @@
   width: 100%;
 }
 
+.why-join {
+  // margin-top: 10px;
+}
+
+.why-join h1 {
+  font-size: 1.71em;
+  font-weight: bold;
+}
+
+.why-join ul {
+  list-style-type: none;
+}
+
+.why-join ul li:first-child {
+  font-size: 1.5em;
+}
+
 .about {
-  margin-top: 10px;
+  // margin-top: 10px;
 }
 
 .about h2 {
@@ -69,8 +226,17 @@
   font-weight: bold;
 }
 
+.trailer {
+  // margin-top: 10px;
+}
+
 .actualities {
-  margin-top: 10px;
+  // margin-top: 10px;
+}
+
+.actualities h3 {
+  font-size: 1.28em;
+  font-weight: bold;
 }
 
 .actualities .bg-actualities {
@@ -93,7 +259,7 @@
 }
 
 .partners {
-  margin: 10px 0;
+  // margin: 10px 0;
 }
 
 .partners h3 {
