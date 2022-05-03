@@ -1,25 +1,31 @@
 <!-- TODO: If device is tablet show only 2 items -->
 <div class="actualities">
   <div class="container reveal fade-left">
-    <h3>Najnovšie správy</h3>
+    <div class="row vcenter">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>Najnovšie správy</h3>
+      </div>
 
-    <div data---="carousel3__null__margin:0;delay:10000;" class="invisible">
-      @{foreach mod in model.reverse()}
-      <figure>
-        <div class="bg-actualities">
-          <!-- TODO: Update src to correct url/file -->
-          <img
-            src="https://im.ucm.sk/images/Institut_manazmentu/default.jpg"
-            class="img-responsive center-block"
-            alt="Actualities image"
-            loading="lazy"
-          />
-          <h3>@{mod['title']}</h3>
-          <p>@{mod['description']}</p>
-          <a href="#">Čítať viac</a>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding">
+        <div data---="carousel3__null__margin:0;delay:10000;" class="invisible">
+          @{foreach mod in model.reverse()}
+          <figure>
+            <div class="bg-actualities">
+              <!-- TODO: Update src to correct url/file -->
+              <img
+                src="https://im.ucm.sk/images/Institut_manazmentu/default.jpg"
+                class="img-responsive center-block"
+                alt="Actualities image"
+                loading="lazy"
+              />
+              <h3>@{mod['title']}</h3>
+              <p>@{mod['description']}</p>
+              <a href="#">Čítať viac</a>
+            </div>
+          </figure>
+          @{end}
         </div>
-      </figure>
-      @{end}
+      </div>
     </div>
   </div>
 </div>
