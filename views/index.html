@@ -1,14 +1,15 @@
-@{meta('Domov')}
+@{meta('Home')}
 
 <div class="carousel">
-  <div data---="carousel2__null__count:1;margin:0;animate:0;" class="invisible">
-    <figure>
-      <!-- TODO: Update src to correct url/file -->
-      <img
-        src="https://scontent.fbts8-1.fna.fbcdn.net/v/t39.30808-6/279688678_557044319171449_7364058723445229146_n.jpg?_nc_cat=104&ccb=1-6&_nc_sid=e3f864&_nc_ohc=onGeqdb8gmIAX_AS5sL&_nc_ht=scontent.fbts8-1.fna&oh=00_AT8K5ifRdRCyYdt5Eq8Vrq-m4uRr2XGMLcahIT1cVi5h9w&oe=627CDEEB"
-        class="img-responsive center-block" alt="Carousel image" loading="lazy" />
-    </figure>
-  </div>
+    <div class="invisible" data---="carousel2__null__count:1;margin:0;animate:0;">
+        <figure>
+            <!-- TODO: Update src to correct url/file -->
+            <img
+                    alt="Carousel image"
+                    class="img-responsive center-block" loading="lazy"
+                    src="https://browsecat.net/sites/default/files/high-tech-earth-wallpapers-83026-1000107-6731403.png"/>
+        </figure>
+    </div>
 </div>
 
 @{view('why-join')} @{view('about', model[0])} @{view('trailer', model[1])}
