@@ -14,4 +14,4 @@ npm install
 node index.js
 ```
 
-### [Total v4 documentation](https://docs.totaljs.com/total4/40cfc001mn51c/)
+### [Total v4 documentation](https://docs.totaljs.com/welcome/)
