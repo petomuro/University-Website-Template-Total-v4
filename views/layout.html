@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+<head>
     @{meta}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
     @{import('meta')}
 
-    <link rel="stylesheet" href="//cdn.componentator.com/spa.min@19.css" />
+    <link href="//cdn.componentator.com/spa.min@19.css" rel="stylesheet"/>
 
     <!-- Latest compiled and minified CSS -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
+            crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            rel="stylesheet"
     />
 
     <!-- Optional theme -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
-      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-      crossorigin="anonymous"
+            crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+            integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+            rel="stylesheet"
     />
 
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            rel="stylesheet"
     />
 
     @{import('body.css', 'carousel3.css', 'default.css', 'global.css',
     'footer.css', 'header.css')}
 
     <script
-      src="https://cdn.componentator.com/livereload.js"
-      data-url="ws://127.0.0.1:35730"
+            data-url="ws://127.0.0.1:35730"
+            src="https://cdn.componentator.com/livereload.js"
     ></script>
 
     <script src="//cdn.componentator.com/spa.min@19.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
     ></script>
 
     <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
     @{import('carousel3.js', 'global.js', 'header.js')}
-  </head>
+</head>
 
-  <body>
-    @{view('header')} @{body} @{view('footer')}
+<body>
+@{view('header')} @{body} @{view('footer')}
 
-    <div data---="backtotop"></div>
-  </body>
+<div data---="backtotop"></div>
+</body>
 </html>

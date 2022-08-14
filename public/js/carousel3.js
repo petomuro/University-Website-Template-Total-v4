@@ -1,271 +1,271 @@
 COMPONENT(
-  "carousel3",
-  "selector:figure;mobileCount:1;tabletCount:2;count:3;margin:10;snapping:true;animate:5000;delay:2000;marginheight:0;duration:300;durationsnap:200;offsetwidth:0;scrolldivider:3",
-  function (self, config, cls) {
-    var cls2 = "." + cls;
-    var width = 0;
-    var margin = 0;
-    var count = 0;
-    var index = 0;
-    var increment = 1;
-    var skip = false;
-    var move = false;
-    var anim;
-    var container;
-    var old;
-    var drag = {};
-    var ready = false;
-    var treset;
+    "carousel3",
+    "selector:figure;mobileCount:1;tabletCount:2;count:3;margin:10;snapping:true;animate:5000;delay:2000;marginheight:0;duration:300;durationsnap:200;offsetwidth:0;scrolldivider:3",
+    function (self, config, cls) {
+        var cls2 = "." + cls;
+        var width = 0;
+        var margin = 0;
+        var count = 0;
+        var index = 0;
+        var increment = 1;
+        var skip = false;
+        var move = false;
+        var anim;
+        var container;
+        var old;
+        var drag = {};
+        var ready = false;
+        var treset;
 
-    self.readonly();
+        self.readonly();
 
-    self.destroy = function () {
-      if (anim) {
-        clearTimeout(anim);
-        anim = null;
-      }
-    };
+        self.destroy = function () {
+            if (anim) {
+                clearTimeout(anim);
+                anim = null;
+            }
+        };
 
-    self.refresh = function () {
-      setTimeout(self.resizeforce, 50);
-      setTimeout(self.resizeforce, 500);
-      setTimeout(self.resizeforce, 2000);
-      container = self.find(cls2 + "-container");
-    };
+        self.refresh = function () {
+            setTimeout(self.resizeforce, 50);
+            setTimeout(self.resizeforce, 500);
+            setTimeout(self.resizeforce, 2000);
+            container = self.find(cls2 + "-container");
+        };
 
-    self.make = function () {
-      self.aclass(cls + " invisible");
-      self.element.wrapInner(
-        '<div class="{0}-container"><div class="{0}-body"></div></div>'.format(
-          cls
-        )
-      );
-      self.on("resize2", self.resize);
-      self.refresh();
-
-      drag.tmove = function () {
-        if (anim) {
-          clearTimeout(anim);
-          anim = null;
-        }
-        container.off("touchmove", drag.tmove);
-      };
-
-      config.snapping &&
-        container
-          .on("scroll", function () {
-            !skip && setTimeout2(self.ID, self.snap, 300);
-          })
-          .on("touchmove", drag.tmove);
-
-      drag.mmove = function (e) {
-        var offset = (drag.x - e.pageX) / 2;
-        var diff = width || (self.width() / config.scrolldivider) >> 0;
-
-        if (Math.abs(offset) > 30) {
-          var plus =
-            (config.snapping ? (diff / 100) * 80 : diff) + config.margin;
-          if (offset > 0) offset = plus;
-          else offset = -plus;
-
-          container
-            .stop()
-            .animate(
-              { scrollLeft: container[0].scrollLeft + offset },
-              config.duration
+        self.make = function () {
+            self.aclass(cls + " invisible");
+            self.element.wrapInner(
+                '<div class="{0}-container"><div class="{0}-body"></div></div>'.format(
+                    cls
+                )
             );
-          drag.mup();
-        }
-      };
+            self.on("resize2", self.resize);
+            self.refresh();
 
-      drag.mup = function () {
-        self.element.off("mouseup", drag.mup).off("mousemove", drag.mmove);
-        if (anim) {
-          clearTimeout(anim);
-          anim = null;
-          container.on("touchmove", drag.tmove);
-        }
-      };
+            drag.tmove = function () {
+                if (anim) {
+                    clearTimeout(anim);
+                    anim = null;
+                }
+                container.off("touchmove", drag.tmove);
+            };
 
-      self.element.on("mousedown", function (e) {
-        drag.x = e.pageX;
-        self.element.on("mousemove", drag.mmove).on("mouseup", drag.mup);
-        e.preventDefault();
-      });
+            config.snapping &&
+            container
+                .on("scroll", function () {
+                    !skip && setTimeout2(self.ID, self.snap, 300);
+                })
+                .on("touchmove", drag.tmove);
 
-      if (config.animate) anim = setTimeout(self.animate, config.animate);
+            drag.mmove = function (e) {
+                var offset = (drag.x - e.pageX) / 2;
+                var diff = width || (self.width() / config.scrolldivider) >> 0;
 
-      self.event("resize + resize2", self.resize);
-    };
+                if (Math.abs(offset) > 30) {
+                    var plus =
+                        (config.snapping ? (diff / 100) * 80 : diff) + config.margin;
+                    if (offset > 0) offset = plus;
+                    else offset = -plus;
 
-    var reset = function () {
-      skip = false;
-      anim = null;
-      treset = null;
-    };
+                    container
+                        .stop()
+                        .animate(
+                            {scrollLeft: container[0].scrollLeft + offset},
+                            config.duration
+                        );
+                    drag.mup();
+                }
+            };
 
-    self.move = function (type, offset) {
-      var x = container[0].scrollLeft;
-      var diff = width || offset || (self.width() / config.scrolldivider) >> 0;
-      var w = type === "left" || type === "next" ? diff : -diff;
-      container
-        .stop()
-        .animate(
-          { scrollLeft: x + w },
-          config.durationsnap,
-          config.snapping ? self.snap : NOOP
-        );
-    };
+            drag.mup = function () {
+                self.element.off("mouseup", drag.mup).off("mousemove", drag.mmove);
+                if (anim) {
+                    clearTimeout(anim);
+                    anim = null;
+                    container.on("touchmove", drag.tmove);
+                }
+            };
 
-    self.animate = function () {
-      if (!count || move) return;
+            self.element.on("mousedown", function (e) {
+                drag.x = e.pageX;
+                self.element.on("mousemove", drag.mmove).on("mouseup", drag.mup);
+                e.preventDefault();
+            });
 
-      index += increment;
+            if (config.animate) anim = setTimeout(self.animate, config.animate);
 
-      if (index === count - 1) increment = -1;
-      else if (index === 0) increment = 1;
+            self.event("resize + resize2", self.resize);
+        };
 
-      skip = true;
-      anim = null;
+        var reset = function () {
+            skip = false;
+            anim = null;
+            treset = null;
+        };
 
-      if (!NOTFOCUSED())
-        container.animate(
-          { scrollLeft: index * (width + config.margin) },
-          config.durationsnap
-        );
+        self.move = function (type, offset) {
+            var x = container[0].scrollLeft;
+            var diff = width || offset || (self.width() / config.scrolldivider) >> 0;
+            var w = type === "left" || type === "next" ? diff : -diff;
+            container
+                .stop()
+                .animate(
+                    {scrollLeft: x + w},
+                    config.durationsnap,
+                    config.snapping ? self.snap : NOOP
+                );
+        };
 
-      treset && clearTimeout(treset);
-      treset = setTimeout(reset, 400);
-      anim = setTimeout(self.animate, config.delay);
-    };
+        self.animate = function () {
+            if (!count || move) return;
 
-    var reset2 = function () {
-      skip = false;
-      treset = null;
-    };
+            index += increment;
 
-    self.snap = function () {
-      var diff = width || (self.width / config.scrolldivider) >> 0;
-      var x = container[0].scrollLeft;
-      var off = Math.round(x / (diff + config.margin));
-      skip = true;
-      move = true;
+            if (index === count - 1) increment = -1;
+            else if (index === 0) increment = 1;
 
-      var pos = off * (diff + margin);
-      var arr = self.find(config.selector);
-      var sum = 0;
+            skip = true;
+            anim = null;
 
-      for (var dom of arr)
-        sum += +dom.getAttribute("data-width") + config.margin;
+            if (!NOTFOCUSED())
+                container.animate(
+                    {scrollLeft: index * (width + config.margin)},
+                    config.durationsnap
+                );
 
-      container.stop().animate({ scrollLeft: pos }, config.durationsnap);
-      treset && clearTimeout(treset);
-      treset = setTimeout(reset2, 400);
-    };
+            treset && clearTimeout(treset);
+            treset = setTimeout(reset, 400);
+            anim = setTimeout(self.animate, config.delay);
+        };
 
-    self.focus = function (id) {
-      var arr = self.find(config.selector);
-      var sum = 0;
-      var is = false;
-      for (var dom of arr) {
-        if (ATTRD(dom) === id) {
-          is = true;
-          break;
-        }
-        sum += +dom.getAttribute("data-width") + config.margin;
-      }
+        var reset2 = function () {
+            skip = false;
+            treset = null;
+        };
 
-      if (!is) return;
+        self.snap = function () {
+            var diff = width || (self.width / config.scrolldivider) >> 0;
+            var x = container[0].scrollLeft;
+            var off = Math.round(x / (diff + config.margin));
+            skip = true;
+            move = true;
 
-      var diff = sum;
-      var w = self.width() - diff;
-      container
-        .stop()
-        .animate(
-          { scrollLeft: w },
-          config.durationsnap,
-          config.snapping ? self.snap : NOOP
-        );
-    };
+            var pos = off * (diff + margin);
+            var arr = self.find(config.selector);
+            var sum = 0;
 
-    self.resize = function () {
-      setTimeout2(self.ID + "resize", self.resizeforce, 200);
-    };
+            for (var dom of arr)
+                sum += +dom.getAttribute("data-width") + config.margin;
 
-    self.resizeforce = function () {
-      if (!self.element) return;
+            container.stop().animate({scrollLeft: pos}, config.durationsnap);
+            treset && clearTimeout(treset);
+            treset = setTimeout(reset2, 400);
+        };
 
-      var w = self.element.width();
-      if (!w) {
-        self.element && setTimeout(self.resize, 100);
-        return;
-      }
+        self.focus = function (id) {
+            var arr = self.find(config.selector);
+            var sum = 0;
+            var is = false;
+            for (var dom of arr) {
+                if (ATTRD(dom) === id) {
+                    is = true;
+                    break;
+                }
+                sum += +dom.getAttribute("data-width") + config.margin;
+            }
 
-      var sum = 0;
+            if (!is) return;
 
-      if ($(window).width() < 768) {
-        width = config.mobileCount ? w / config.mobileCount : 0;
-        margin = config.mobileCount ? config.margin / config.mobileCount : 0;
-      } else if ($(window).width() < 992 && $(window).width() >= 768) {
-        width = config.tabletCount ? w / config.tabletCount : 0;
-        margin = config.tabletCount ? config.margin / config.tabletCount : 0;
-      } else {
-        width = config.count ? w / config.count : 0;
-        margin = config.count ? config.margin / config.count : 0;
-      }
+            var diff = sum;
+            var w = self.width() - diff;
+            container
+                .stop()
+                .animate(
+                    {scrollLeft: w},
+                    config.durationsnap,
+                    config.snapping ? self.snap : NOOP
+                );
+        };
 
-      count = 0;
+        self.resize = function () {
+            setTimeout2(self.ID + "resize", self.resizeforce, 200);
+        };
 
-      var arr = self.find(config.selector);
-      var height = config.parent
-        ? self.parent(config.parent).height() - config.marginheight
-        : 0;
-      var countheight = !height;
-      var css = {};
+        self.resizeforce = function () {
+            if (!self.element) return;
 
-      for (var dom of arr) {
-        var el = $(dom);
+            var w = self.element.width();
+            if (!w) {
+                self.element && setTimeout(self.resize, 100);
+                return;
+            }
 
-        if (countheight) height = Math.max(el.innerHeight(), height);
+            var sum = 0;
 
-        var w = width || el.width();
+            if ($(window).width() < 768) {
+                width = config.mobileCount ? w / config.mobileCount : 0;
+                margin = config.mobileCount ? config.margin / config.mobileCount : 0;
+            } else if ($(window).width() < 992 && $(window).width() >= 768) {
+                width = config.tabletCount ? w / config.tabletCount : 0;
+                margin = config.tabletCount ? config.margin / config.tabletCount : 0;
+            } else {
+                width = config.count ? w / config.count : 0;
+                margin = config.count ? config.margin / config.count : 0;
+            }
 
-        sum += w + config.margin;
-        if ($(window).width() < 768) {
-          if (config.mobileCount) css.width = w - (config.margin - margin);
-        } else if ($(window).width() < 992 && $(window).width() >= 768) {
-          if (config.tabletCount) css.width = w - (config.margin - margin);
-        } else {
-          if (config.count) css.width = w - (config.margin - margin);
-        }
+            count = 0;
 
-        css["margin-right"] = config.margin;
+            var arr = self.find(config.selector);
+            var height = config.parent
+                ? self.parent(config.parent).height() - config.marginheight
+                : 0;
+            var countheight = !height;
+            var css = {};
 
-        if (!countheight) css.height = height;
+            for (var dom of arr) {
+                var el = $(dom);
 
-        el.attrd("width", w);
-        el.css(css);
-        count++;
-      }
+                if (countheight) height = Math.max(el.innerHeight(), height);
 
-      var k = sum + "x" + height;
+                var w = width || el.width();
 
-      if (old === k) return;
+                sum += w + config.margin;
+                if ($(window).width() < 768) {
+                    if (config.mobileCount) css.width = w - (config.margin - margin);
+                } else if ($(window).width() < 992 && $(window).width() >= 768) {
+                    if (config.tabletCount) css.width = w - (config.margin - margin);
+                } else {
+                    if (config.count) css.width = w - (config.margin - margin);
+                }
 
-      old = k;
-      container.css("height", height + 40);
-      self.css("height", (height >> 0) + 2);
-      self.find(cls2 + "-body").css("width", sum + config.offsetwidth);
+                css["margin-right"] = config.margin;
 
-      if (!ready) {
-        self.rclass("invisible hidden");
-        ready = true;
-      }
-    };
+                if (!countheight) css.height = height;
 
-    self.setter = function () {
-      self.refresh();
-      container.stop().animate({ scrollLeft: 0 }, config.duration);
-    };
-  }
+                el.attrd("width", w);
+                el.css(css);
+                count++;
+            }
+
+            var k = sum + "x" + height;
+
+            if (old === k) return;
+
+            old = k;
+            container.css("height", height + 40);
+            self.css("height", (height >> 0) + 2);
+            self.find(cls2 + "-body").css("width", sum + config.offsetwidth);
+
+            if (!ready) {
+                self.rclass("invisible hidden");
+                ready = true;
+            }
+        };
+
+        self.setter = function () {
+            self.refresh();
+            container.stop().animate({scrollLeft: 0}, config.duration);
+        };
+    }
 );

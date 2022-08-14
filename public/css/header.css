@@ -1,48 +1,48 @@
 @media (max-width: 767px) {
-  .header .social {
-    display: none;
-  }
+    .header .social {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
-  .header .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+    .header .dropdown:hover .dropdown-menu {
+        display: block;
+    }
 
-  .header .social {
-    font-size: 1.5em;
-  }
+    .header .social {
+        font-size: 1.5em;
+    }
 
-  .header .social a {
-    padding-left: 0;
-  }
+    .header .social a {
+        padding-left: 0;
+    }
 }
 
 @media (min-width: 1200px) {
-  .header .navbar {
-    min-height: 80px;
-  }
+    .header .navbar {
+        min-height: 80px;
+    }
 
-  .header .navbar-brand {
-    height: 80px;
-    line-height: 80px;
-    padding: 0 15px;
-  }
+    .header .navbar-brand {
+        height: 80px;
+        line-height: 80px;
+        padding: 0 15px;
+    }
 
-  .header .navbar-nav > li > a {
-    line-height: 27px;
-    /* (80px - line-height of 27px) / 2 = 26.5px */
-    padding-bottom: 26.5px;
-    padding-top: 26.5px;
-  }
+    .header .navbar-nav > li > a {
+        line-height: 27px;
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-bottom: 26.5px;
+        padding-top: 26.5px;
+    }
 
-  .header .navbar-toggle {
-    /* (80px - button height 34px) / 2 = 23px */
-    margin-top: 23px;
-    padding: 9px 10px;
-  }
+    .header .navbar-toggle {
+        /* (80px - button height 34px) / 2 = 23px */
+        margin-top: 23px;
+        padding: 9px 10px;
+    }
 }
 
 .header .navbar {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
